@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customize</title>
+</head>
+<body>
+<div>
+    <label>Choose size</label>
+    <div th:each="size : ${sizes}" class="choices">
+        <div class="choice">
+            <input type="radio" name="size" th:id="${size.getRowLength()}" />
+            <label th:text="${size.getRowLength()} * ${size.getRowLength()}"
+                   th:for="${size.getRowLength()}"></label>
+        </div>
+    </div>
+</div>
+<div>
+    <label>Choose level</label>
+    <div th:each="level : ${levels}" class="choices">
+        <div class="choice">
+            <input type="radio" name="level" th:id="${level.name()}" />
+            <label th:text="${level.name()}" th:for="${level.name()}"></label>
+        </div>
+    </div>
+</div>
+<div>
+    <input type="submit" value="submit">
+</div>
+</body>
+</html>
