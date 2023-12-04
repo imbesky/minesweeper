@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="stop-watch">
+        <time></time>
+        <!-- 정지-->
+        <!-- 재시작-->
+    </div>
+    <div>
+        <input type="button" value="end game">
+    </div>
+    <table id="board" >
+        <tr th:each="row : ${#numbers.sequence(0,length)}">
+            <td th:each="column : ${#numbers.sequence(0,length)}">
+                <button class="tile" th:name="${row}r${column}c"
+                        th:onclick="leftClicked()"
+                        th:oncontextmenu=""></button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

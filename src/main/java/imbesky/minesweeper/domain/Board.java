@@ -17,7 +17,7 @@ public class Board {
         mineNumber = Math.round(length*ratio);
         totalTiles = length*length;
     }
-    public boolean isMine(int row, int column){
+    public boolean isMine(final int row,final int column){
         return board.get(row).get(column);
     }
     public int neighboringMineNumber(final int row, final int column){
@@ -33,7 +33,7 @@ public class Board {
         }
         Collections.shuffle(board);
     }
-    private List<Boolean> makeBoardRow(int row, int length){
+    private List<Boolean> makeBoardRow(final int row,final int length){
         final List<Boolean> boardRow = new ArrayList<>();
         for(int column = INITIAL_VALUE; column < length; column++){
             boardRow.add(isThisMine(length * row + column));

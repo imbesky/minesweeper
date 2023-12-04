@@ -7,8 +7,8 @@
 <body>
 <div>
     <label>Choose size</label>
-    <div th:each="size : ${sizes}" class="choices">
-        <div class="choice">
+    <div class="choices">
+        <div class="choice" th:each="size : ${sizes}">
             <input type="radio" name="size" th:id="${size.getRowLength()}" />
             <label th:text="${size.getRowLength()} * ${size.getRowLength()}"
                    th:for="${size.getRowLength()}"></label>
@@ -17,8 +17,8 @@
 </div>
 <div>
     <label>Choose level</label>
-    <div th:each="level : ${levels}" class="choices">
-        <div class="choice">
+    <div class="choices">
+        <div class="choice" th:each="level : ${levels}">
             <input type="radio" name="level" th:id="${level.name()}" />
             <label th:text="${level.name()}" th:for="${level.name()}"></label>
         </div>
